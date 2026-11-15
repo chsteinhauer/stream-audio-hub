@@ -1,0 +1,63 @@
+# --- Build output (CMake) ---
+build/
+build-*/
+cmake-build-*/
+out/
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
+# --- Projucer-generated (in case it's ever used) ---
+Builds/
+JuceLibraryCode/
+
+# --- Compiled artifacts & plugin bundles ---
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.app
+*.component
+*.vst
+*.vst3
+*.aaxplugin
+*.clap
+*.dSYM/
+*.pdb
+*.ilk
+
+# --- Xcode ---
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# --- Visual Studio ---
+.vs/
+*.vcxproj.user
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# --- Editors / tooling ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+.idea/
+.cache/
+.clangd/
+*.swp
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
