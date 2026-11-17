@@ -21,7 +21,14 @@ juce_add_plugin(AudioHub
 
 target_sources(AudioHub PRIVATE
     Source/AudioHubProcessor.cpp
-    Source/AudioHubEditor.cpp)
+    Source/AudioHubEditor.cpp
+    Source/ui/AudioHubLayout.cpp
+    Source/ui/RoutingMatrix.cpp
+    Source/ui/components/MatrixHeader.cpp
+    Source/ui/components/MatrixRow.cpp
+    Source/ui/components/OutputToggle.cpp)
+
+target_include_directories(AudioHub PRIVATE Source)
 
 target_compile_definitions(AudioHub PUBLIC
     JUCE_WEB_BROWSER=0
