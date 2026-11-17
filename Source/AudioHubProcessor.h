@@ -1,11 +1,14 @@
 #pragma once
 
 #include <juce_audio_processors/juce_audio_processors.h>
+#include "model/RoutingModel.h"
 
 //==============================================================================
 class AudioHubProcessor final : public juce::AudioProcessor
 {
 public:
+    RoutingModel routing;
+
     //==============================================================================
     AudioHubProcessor();
     ~AudioHubProcessor() override;

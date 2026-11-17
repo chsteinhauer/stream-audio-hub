@@ -1,13 +1,13 @@
 #include "RoutingMatrix.h"
 #include "static/Theme.h"
 
-RoutingMatrix::RoutingMatrix() : header(TestData::outputs)
+RoutingMatrix::RoutingMatrix(RoutingModel& r) : routing(r), header(r.getOutputs())
 {
     addAndMakeVisible (header);
 
-    for (auto& source : TestData::sources) 
+    for (auto source : routing.getSources()) 
     {
-        auto row = new MatrixRow (source, TestData::outputs);
+        auto row = new MatrixRow (source, routing.getOutputs());
         rows.add(row);
         addAndMakeVisible(row);
     }

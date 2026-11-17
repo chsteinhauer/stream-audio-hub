@@ -1,13 +1,14 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "../../static/MatrixInfo.h"
-#include "../../static/TestData.h"
 #include "OutputHeaderCell.h"
+#include "model/IDs.h"
+#include "model/RoutingModel.h"
+#include "static/MatrixInfo.h"
 
 class MatrixHeader : public juce::Component
 {
 public:
-    MatrixHeader(const std::vector<OutputInfo>& outputs);
+    MatrixHeader(juce::ValueTree outputs);
 
     void paint (juce::Graphics& g) override;
     void resized() override;

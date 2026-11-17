@@ -22,6 +22,7 @@ juce_add_plugin(AudioHub
 target_sources(AudioHub PRIVATE
     Source/AudioHubProcessor.cpp
     Source/AudioHubEditor.cpp
+    Source/model/RoutingModel.cpp
     Source/ui/AudioHubLayout.cpp
     Source/ui/RoutingMatrix.cpp
     Source/ui/components/MatrixHeader.cpp

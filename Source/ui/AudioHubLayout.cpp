@@ -1,7 +1,7 @@
 #include "AudioHubLayout.h"
 #include "static/Theme.h"
 
-AudioHubLayout::AudioHubLayout()
+AudioHubLayout::AudioHubLayout(RoutingModel& routing) : matrix(routing)
 {
     addAndMakeVisible (matrix);
 }

@@ -2,18 +2,19 @@
 #include <juce_gui_basics/juce_gui_basics.h>
 #include "../../static/MatrixInfo.h"
 #include "OutputToggle.h"
-#include "../../static/TestData.h"
-
+#include "model/IDs.h"
 class MatrixRow : public juce::Component
 {
 public:
-    MatrixRow(const SourceInfo& info, const std::vector<OutputInfo>& outputs);
+    MatrixRow(juce::ValueTree source, juce::ValueTree outputs);
 
     void paint (juce::Graphics& g) override;
     void resized() override;
 
 private:
-    juce::Label  source;
+    juce::ValueTree  source;
+
+    juce::Label  name;
     juce::Slider level;
     juce::Label  meter;
     juce::OwnedArray<OutputToggle> outputToggles;

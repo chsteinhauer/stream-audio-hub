@@ -6,8 +6,8 @@
 class OutputHeaderCell : public juce::Component
 {
 public:
-    OutputHeaderCell (const juce::String& name, juce::Colour colour)
-        : text (name.toUpperCase()), colour (colour) {}
+    OutputHeaderCell (const juce::String& name, juce::Colour col)
+        : text (name.toUpperCase()), colour (col) {}
 
     void paint (juce::Graphics& g) override
     {

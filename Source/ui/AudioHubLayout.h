@@ -1,11 +1,12 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
 #include "RoutingMatrix.h"
+#include "model/RoutingModel.h"
 
 class AudioHubLayout : public juce::Component
 {
 public:
-    AudioHubLayout();
+    AudioHubLayout(RoutingModel& routing);
 
     void paint (juce::Graphics& g) override;
     void resized() override;

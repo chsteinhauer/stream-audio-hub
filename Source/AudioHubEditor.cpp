@@ -4,7 +4,7 @@
 
 //==============================================================================
 AudioHubProcessorEditor::AudioHubProcessorEditor (AudioHubProcessor& p)
-    : AudioProcessorEditor (&p), processorRef (p)
+    : AudioProcessorEditor (&p), processorRef (p), layout(p.routing)
 {
     juce::ignoreUnused (processorRef);
     // Make sure that before the constructor has finished, you've set the

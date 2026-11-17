@@ -1,7 +1,7 @@
 #include "MatrixHeader.h"
 #include "static/Theme.h"
 
-MatrixHeader::MatrixHeader(const std::vector<OutputInfo>& _outputs)
+MatrixHeader::MatrixHeader(juce::ValueTree _outputs)
 {
     source.setText(MatrixInfo::sourceTitle, juce::dontSendNotification);
     
@@ -13,9 +13,9 @@ MatrixHeader::MatrixHeader(const std::vector<OutputInfo>& _outputs)
     mute.setText(MatrixInfo::muteTitle, juce::dontSendNotification);
     addAndMakeVisible (mute);
 
-    for (auto& output : _outputs) 
+    for (auto output : _outputs) 
     {
-        auto cell = new OutputHeaderCell(output.name, output.colour);
+        auto cell = new OutputHeaderCell(output[IDs::name].toString(), RoutingModel::getColour(output));
         outputs.add(cell);
         addAndMakeVisible(cell);
     }
