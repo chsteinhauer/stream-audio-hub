@@ -15,11 +15,7 @@ RoutingMatrix::RoutingMatrix(RoutingModel& r) : routing(r), header(r.getOutputs(
 
 void RoutingMatrix::paint (juce::Graphics& g)
 {
-    auto bounds = getLocalBounds().toFloat();
-    g.setColour (Theme::panel);
-    g.fillRoundedRectangle (bounds, Theme::radius);
-    g.setColour (Theme::panelBorder);
-    g.drawRoundedRectangle (bounds.reduced (0.5f), Theme::radius, 1.0f);
+    
 }
 
 void RoutingMatrix::resized()

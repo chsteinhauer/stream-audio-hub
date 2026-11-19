@@ -2,6 +2,7 @@
 
 #include <juce_audio_processors/juce_audio_processors.h>
 #include "model/RoutingModel.h"
+#include "capture/AppAudioCapture.h"
 
 //==============================================================================
 class AudioHubProcessor final : public juce::AudioProcessor
@@ -46,6 +47,8 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+    std::unique_ptr<AppAudioCapture> capture = AppAudioCapture::create();
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioHubProcessor)
 };

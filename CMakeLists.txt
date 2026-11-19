@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 # Universal binary: native on Apple Silicon, still runs on Intel Macs
 set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64" CACHE STRING "")
-set(CMAKE_OSX_DEPLOYMENT_TARGET "11.0" CACHE STRING "")
+set(CMAKE_OSX_DEPLOYMENT_TARGET "14.2" CACHE STRING "")
 
 project(AudioHub VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 20)
@@ -25,9 +25,19 @@ target_sources(AudioHub PRIVATE
     Source/model/RoutingModel.cpp
     Source/ui/AudioHubLayout.cpp
     Source/ui/RoutingMatrix.cpp
+    Source/ui/RoutingPanel.cpp
+    Source/ui/components/RoutingPanelHeader.cpp
     Source/ui/components/MatrixHeader.cpp
     Source/ui/components/MatrixRow.cpp
     Source/ui/components/OutputToggle.cpp)
+
+if(APPLE)
+    target_sources(AudioHub PRIVATE Source/capture/AppAudioCapture_Mac.mm)
+elseif(WIN32)
+    target_sources(AudioHub PRIVATE Source/capture/AppAudioCapture_Win.cpp)
+elseif(UNIX)
+    target_sources(AudioHub PRIVATE Source/capture/AppAudioCapture_Linux.cpp)
+endif()
 
 target_include_directories(AudioHub PRIVATE Source)
 

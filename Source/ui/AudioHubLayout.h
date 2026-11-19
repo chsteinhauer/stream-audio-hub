@@ -1,6 +1,6 @@
 #pragma once
 #include <juce_gui_basics/juce_gui_basics.h>
-#include "RoutingMatrix.h"
+#include "RoutingPanel.h"
 #include "model/RoutingModel.h"
 
 class AudioHubLayout : public juce::Component
@@ -12,7 +12,7 @@ public:
     void resized() override;
 
 private:
-    RoutingMatrix matrix;
+    RoutingPanel panel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioHubLayout)
 };

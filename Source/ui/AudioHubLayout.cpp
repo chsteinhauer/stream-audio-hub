@@ -1,9 +1,9 @@
 #include "AudioHubLayout.h"
 #include "static/Theme.h"
 
-AudioHubLayout::AudioHubLayout(RoutingModel& routing) : matrix(routing)
+AudioHubLayout::AudioHubLayout(RoutingModel& routing) : panel(routing)
 {
-    addAndMakeVisible (matrix);
+    addAndMakeVisible (panel);
 }
 
 void AudioHubLayout::paint (juce::Graphics& g)
@@ -14,5 +14,5 @@ void AudioHubLayout::paint (juce::Graphics& g)
 void AudioHubLayout::resized()
 {
     auto area = getLocalBounds().reduced (Theme::pagePadding);
-    matrix.setBounds (area);
+    panel.setBounds (area);
 }

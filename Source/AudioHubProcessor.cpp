@@ -12,6 +12,8 @@ AudioHubProcessor::AudioHubProcessor()
                      #endif
                        )
 {
+    for (auto& app : capture->getAvailableApps())
+        DBG (app.name << "  (" << app.bundleOrExe << ", pid " << app.id << ")");
 }
 
 AudioHubProcessor::~AudioHubProcessor()
